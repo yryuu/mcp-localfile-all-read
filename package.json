@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "mcp-localfile-reader": "dist/index.js"
+    "mcp-localfile-all-read": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",
