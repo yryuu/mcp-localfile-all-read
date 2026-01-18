@@ -1,5 +1,5 @@
 {
-  "name": "@ryuuyamazaki/mcp-localfile-reader",
+  "name": "@your-username/mcp-localfile-reader",
   "version": "1.0.0",
   "description": "MCP server for reading local files with support for multiple formats (PDF, Excel, Word, PowerPoint, CSV)",
   "type": "module",
@@ -22,7 +22,7 @@
     "word",
     "powerpoint"
   ],
-  "author": "Ryuu Yamazaki",
+  "author": "yryuu",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.4",

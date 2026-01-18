@@ -3,10 +3,10 @@
         "localfile-reader": {
             "command": "node",
             "args": [
-                "/Users/ryuuyamazaki/project/chatgpt/agent/mcp-localfile-all-read/dist/index.js"
+                "/Users/your-username/path/to/mcp-localfile-all-read/dist/index.js"
             ],
             "env": {
-                "MCP_ROOT_PATH": "/Users/ryuuyamazaki/Documents"
+                "MCP_ROOT_PATH": "/Users/your-username/Documents"
             }
         }
     }
