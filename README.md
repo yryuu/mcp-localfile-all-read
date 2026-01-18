@@ -29,7 +29,7 @@ No installation needed! Just configure Claude Desktop to use npx:
       "command": "npx",
       "args": [
         "-y",
-        "@your-username/mcp-localfile-reader"
+        "@yryuu/mcp-localfile-reader"
       ],
       "env": {
         "MCP_ROOT_PATH": "/path/to/your/directory"
@@ -42,7 +42,7 @@ No installation needed! Just configure Claude Desktop to use npx:
 ### Local Installation
 
 ```bash
-npm install -g @your-username/mcp-localfile-reader
+npm install -g @yryuu/mcp-localfile-reader
 ```
 
 ## Configuration
@@ -62,7 +62,7 @@ Add the server configuration:
   "mcpServers": {
     "localfile-reader": {
       "command": "npx",
-      "args": ["-y", "@your-username/mcp-localfile-reader"],
+      "args": ["-y", "@yryuu/mcp-localfile-reader"],
       "env": {
         "MCP_ROOT_PATH": "/Users/yourname/Documents"
       }
@@ -216,7 +216,7 @@ Read the "Sales" sheet from budget.xlsx
 ### Setup
 
 ```bash
-git clone https://github.com/your-username/mcp-localfile-all-read.git
+git clone https://github.com/yryuu/mcp-localfile-all-read.git
 cd mcp-localfile-all-read
 npm install
 ```
@@ -316,4 +316,4 @@ yryuu
 
 ## Repository
 
-https://github.com/your-username/mcp-localfile-all-read
+https://github.com/yryuu/mcp-localfile-all-read
