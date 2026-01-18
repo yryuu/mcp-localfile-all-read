@@ -1,0 +1,13 @@
+{
+    "mcpServers": {
+        "localfile-reader": {
+            "command": "node",
+            "args": [
+                "/Users/ryuuyamazaki/project/chatgpt/agent/mcp-localfile-all-read/dist/index.js"
+            ],
+            "env": {
+                "MCP_ROOT_PATH": "/Users/ryuuyamazaki/Documents"
+            }
+        }
+    }
+}

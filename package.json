@@ -1,0 +1,47 @@
+{
+  "name": "@ryuuyamazaki/mcp-localfile-reader",
+  "version": "1.0.0",
+  "description": "MCP server for reading local files with support for multiple formats (PDF, Excel, Word, PowerPoint, CSV)",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-localfile-reader": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "test": "tsx test/manual-test.ts"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "file-reader",
+    "pdf",
+    "excel",
+    "word",
+    "powerpoint"
+  ],
+  "author": "Ryuu Yamazaki",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "adm-zip": "^0.5.16",
+    "csv-parse": "^5.6.0",
+    "iconv-lite": "^0.6.3",
+    "jschardet": "^3.1.4",
+    "mammoth": "^1.8.0",
+    "pdf-parse": "^1.1.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.5",
+    "@types/node": "^22.10.5",
+    "@types/pdf-parse": "^1.1.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
