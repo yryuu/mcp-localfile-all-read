@@ -29,7 +29,7 @@ No installation needed! Just configure Claude Desktop to use npx:
       "command": "npx",
       "args": [
         "-y",
-        "@yryuu/mcp-localfile-all-read"
+        "github:yryuu/mcp-localfile-all-read"
       ],
       "env": {
         "MCP_ROOT_PATH": "/path/to/your/directory"
@@ -42,7 +42,7 @@ No installation needed! Just configure Claude Desktop to use npx:
 ### Local Installation
 
 ```bash
-npm install -g @yryuu/mcp-localfile-all-read
+npx github:yryuu/mcp-localfile-all-read
 ```
 
 ## Configuration
@@ -62,7 +62,7 @@ Add the server configuration:
   "mcpServers": {
     "localfile-reader": {
       "command": "npx",
-      "args": ["-y", "@yryuu/mcp-localfile-all-read"],
+      "args": ["-y", "github:yryuu/mcp-localfile-all-read"],
       "env": {
         "MCP_ROOT_PATH": "/Users/yourname/Documents"
       }

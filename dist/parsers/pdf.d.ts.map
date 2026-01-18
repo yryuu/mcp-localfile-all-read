@@ -1,0 +1,1 @@
+{"version":3,"file":"pdf.d.ts","sourceRoot":"","sources":["../../src/parsers/pdf.ts"],"names":[],"mappings":"AAGA;;GAEG;AACH,wBAAsB,QAAQ,CAAC,QAAQ,EAAE,MAAM,GAAG,OAAO,CAAC,MAAM,CAAC,CAQhE;AAED;;GAEG;AACH,wBAAsB,UAAU,CAAC,QAAQ,EAAE,MAAM,GAAG,OAAO,CAAC;IACxD,KAAK,EAAE,MAAM,CAAC;IACd,IAAI,EAAE,GAAG,CAAC;CACb,CAAC,CAWD"}
