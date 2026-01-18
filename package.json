@@ -1,5 +1,5 @@
 {
-  "name": "@yryuu/mcp-localfile-reader",
+  "name": "@yryuu/mcp-localfile-all-read",
   "version": "1.0.0",
   "description": "MCP server for reading local files with support for multiple formats (PDF, Excel, Word, PowerPoint, CSV)",
   "type": "module",
