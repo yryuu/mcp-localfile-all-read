@@ -1,6 +1,20 @@
-import { readdir, stat } from 'fs/promises';
+import { readdir, stat, readFile } from 'fs/promises';
 import { join, relative } from 'path';
 import { readFileWithEncoding } from '../parsers/encoding.js';
+import ignore from 'ignore';
+async function getIgnorer(rootPath) {
+    const ig = ignore();
+    // Default ignores for performance
+    ig.add(['.git', 'node_modules', 'dist', 'build']);
+    try {
+        const gitignoreContent = await readFile(join(rootPath, '.gitignore'), 'utf8');
+        ig.add(gitignoreContent);
+    }
+    catch {
+        // .gitignore not found or unreadable, proceed with defaults
+    }
+    return ig;
+}
 /**
  * Search for files matching a pattern
  * Returns list of matching file paths
@@ -11,19 +25,20 @@ export async function searchFiles(dirPath, pattern, options) {
     const regex = typeof pattern === 'string'
         ? new RegExp(pattern, options.caseSensitive ? 'g' : 'gi')
         : pattern;
+    const ig = await getIgnorer(options.rootPath);
     async function searchInDirectory(currentPath) {
         try {
             const entries = await readdir(currentPath);
             for (const entry of entries) {
-                // Early exit if we've found enough files
                 if (matchedFiles.size >= maxResults) {
                     return;
                 }
-                // Skip common directories that should be ignored
-                if (entry === 'node_modules' || entry === '.git' || entry === 'dist' || entry === 'build') {
+                const fullPath = join(currentPath, entry);
+                const relPath = relative(options.rootPath, fullPath);
+                // Skip ignored paths
+                if (ig.ignores(relPath)) {
                     continue;
                 }
-                const fullPath = join(currentPath, entry);
                 const stats = await stat(fullPath);
                 if (stats.isDirectory()) {
                     if (options.recursive !== false) {
@@ -81,11 +96,17 @@ export async function findFiles(dirPath, namePattern, options) {
     const regex = typeof namePattern === 'string'
         ? new RegExp(namePattern, options.caseSensitive ? '' : 'i')
         : namePattern;
+    const ig = await getIgnorer(options.rootPath);
     async function searchInDirectory(currentPath) {
         try {
             const entries = await readdir(currentPath);
             for (const entry of entries) {
                 const fullPath = join(currentPath, entry);
+                const relPath = relative(options.rootPath, fullPath);
+                // Skip ignored paths
+                if (ig.ignores(relPath)) {
+                    continue;
+                }
                 const stats = await stat(fullPath);
                 if (stats.isDirectory()) {
                     if (options.recursive !== false) {
